@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Ejercicios de JavaScript</h1>
+
+    <div class="exercise">
+        <h2>Contador Ascendente</h2>
+        <button onclick="contadorAscendente()">Ejecutar</button>
+    </div>
+
+    <div class="exercise">
+        <h2>Sumar Números hasta que el Usuario Ingrese '0'</h2>
+        <button onclick="sumarNumeros()">Ejecutar</button>
+    </div>
+
+    <div class="exercise">
+        <h2>Validación de Edad</h2>
+        <button onclick="validarEdad()">Ejecutar</button>
+    </div>
+
+    <div class="exercise">
+        <h2>Mostrar Solo Números Pares</h2>
+        <button onclick="mostrarPares()">Ejecutar</button>
+    </div>
+
+    <div class="exercise">
+        <h2>Repetir un Mensaje hasta que el Usuario Escriba 'salir'</h2>
+        <button onclick="repetirMensaje()">Ejecutar</button>
+    </div>
+
+    <script>
+        function contadorAscendente() {
+            let numero = parseInt(prompt("Ingresa un número:"));
+            let contador = 1;
+            while (contador <= numero) {
+                console.log(contador);
+                contador++;
+            }
+        }
+
+        function sumarNumeros() {
+            let suma = 0;
+            while (true) {
+                let numero = parseInt(prompt("Ingresa un número (0 para terminar):"));
+                if (numero === 0) {
+                    break;
+                }
+                suma = suma + numero;
+            }
+            alert("La suma total es: " + suma);
+        }
+
+        function validarEdad() {
+            let edad;
+            while (true) {
+                edad = parseInt(prompt("Ingresa tu edad:"));
+                if (edad > 0 && edad < 120) {
+                    alert("Edad válida");
+                    break;
+                } else {
+                    alert("Por favor, ingresa una edad válida entre 1 y 120.");
+                }
+            }
+        }
+
+        function mostrarPares() {
+            let numero = parseInt(prompt("Ingresa un número:"));
+            let i = 0;
+            while (i <= numero) {
+                if (i % 2 === 0) {
+                    console.log(i);
+                }
+                i++;
+            }
+        }
+
+        function repetirMensaje() {
+            let mensaje;
+            while (true) {
+                mensaje = prompt("Escribe un mensaje (escribe 'salir' para terminar):");
+                if (mensaje.toLowerCase() === "salir") {
+                    break;
+                }
+                console.log(mensaje);
+            }
+        }
+    </script>
+
+</body>
+</html>
